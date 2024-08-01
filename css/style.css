@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gallerycontainer{
+    width: 80em;
+    display: flex;
+    gap: 4em;
+    flex-wrap: wrap;   
+    margin: 0 auto;
+    padding: 15px;  
+   
+}
+.card{
+    position: relative;
+    width: 190px;
+    height: 300px;
+    border-radius: 10px;    
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.card:hover{
+    cursor: pointer;
+}
+
+p{
+    font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+    text-align: center;
+    margin-top: 7px;
+    font-size: 17px;
+}
+
+
+.imgshopping{
+    width: 190px;
+    height: 254px;
+    border-radius: 10px 10px 0px 0px ;
+
+    
+}
+
+

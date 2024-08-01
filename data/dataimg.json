@@ -1,0 +1,73 @@
+[
+    {
+    "nombre":"nombre1",
+    "url":"./img/WhatsApp Image 2024-07-31 at 9.13.49 AM.jpeg",
+    "precio":"$ 70.000"
+    },
+    {
+        "nombre":"nombre2",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.50 AM (1).jpeg"
+    },
+    {
+        "nombre":"nombre3",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.50 AM.jpeg"
+    },
+    {
+        "nombre":"nombre4",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.51 AM (1).jpeg"
+    },
+    {
+        "nombre":"nombre5",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.51 AM (2).jpeg"
+    },
+    {
+       
+        "nombre":"nombre6",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.51 AM.jpeg" 
+    },
+    {
+        "nombre":"nombre7",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.52 AM.jpeg"
+    },
+    {
+        "nombre":"nombre8",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.53 AM (1).jpeg"
+    },
+    {
+        "nombre":"nombre9",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.53 AM (2).jpeg"
+    },
+    {
+        "nombre":"nombre10",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.53 AM.jpeg"
+    },
+    {
+        "nombre":"nombre11",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.54 AM (1).jpeg"
+    },
+    {
+        "nombre":"nombre12",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.54 AM.jpeg"
+    },
+    {
+        "nombre":"nombre13",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.55 AM (1).jpeg"
+    },
+    {
+        "nombre":"nombre14",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.55 AM.jpeg"
+    },
+    {
+        "nombre":"nombre15",
+        "url":"./img/WhatsApp Image 2024-07-31 at 10.37.19 AM(1).jpeg"
+    },
+    {
+         "nombre":"nombre16",
+        "url":"./img/WhatsApp Image 2024-07-31 at 10.37.19 AM(2).jpeg"
+    },
+    {
+        "nombre":"nombre17",
+       "url":"./img/WhatsApp Image 2024-07-31 at 10.37.19 AM.jpeg"
+   }
+    
+]
