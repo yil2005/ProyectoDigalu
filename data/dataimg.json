@@ -1,80 +1,108 @@
 [
     {
-    "nombre":"mochila mayyu",
+    "nombre":"Mochila hecha a mano",
     "url":"./img/WhatsApp Image 2024-07-31 at 9.13.49 AM.jpeg",
-    "precio":"$ 60.000"
+    "precio":"$ 52.000"
     },
     {
-        "nombre":"nombre2",
+        "nombre":"aretes",
         "url":"./img/WhatsApp Image 2024-07-31 at 9.13.50 AM (1).jpeg",
+        "precio":"$ 14.000",
+        "starts": 5
+    },
+    {
+        "nombre":"Mochila sombrero volteado a crochet",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.50 AM.jpeg",
+        "starts": 3,
         "precio":"$ 80.000"
     },
     {
-        "nombre":"nombre3",
-        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.50 AM.jpeg"
+        "nombre":"aretes",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.51 AM (1).jpeg",
+        "precio":"$ 14.000",
+        "starts": 3
     },
     {
-        "nombre":"nombre4",
-        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.51 AM (1).jpeg"
-    },
-    {
-        "nombre":"nombre5",
-        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.51 AM (2).jpeg"
+        "nombre":"aretes",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.51 AM (2).jpeg",
+        "precio":"$ 14.000",
+        "starts": 3
+
     },
     {
        
-        "nombre":"nombre6",
-        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.51 AM.jpeg" 
+        "nombre":"aretes",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.51 AM.jpeg",
+        "precio":"$ 14.000",
+        "starts": 3
+       
     },
     {
-        "nombre":"nombre7",
-        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.52 AM.jpeg"
+        "nombre":"pulsera",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.52 AM.jpeg",
+        "precio":"$ 14.000",
+        "starts": 3
     },
     {
-        "nombre":"nombre8",
-        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.53 AM (1).jpeg"
+        "nombre":"pulsera",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.53 AM (1).jpeg",
+        "precio":"$ 14.000",
+        "starts": 3
     },
     {
-        "nombre":"nombre9",
-        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.53 AM (2).jpeg"
+        "nombre":"pulsera",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.53 AM (2).jpeg",
+        "precio":"$ 14.000",
+        "starts": 3
     },
     {
-        "nombre":"nombre10",
-        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.53 AM.jpeg"
+        "nombre":"pulsera",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.53 AM.jpeg",
+        "precio":"$ 14.000",
+        "starts": 3
     },
     {
-        "nombre":"nombre11",
-        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.54 AM (1).jpeg"
+        "nombre":"pulsera",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.54 AM (1).jpeg",
+        "precio":"$ 14.000",
+        "starts": 3
     },
     {
-        "nombre":"nombre12",
-        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.54 AM.jpeg"
+        "nombre":"pulsera",
+        "url":"./img/WhatsApp Image 2024-07-31 at 9.13.54 AM.jpeg",
+        "precio":"$ 14.000",
+        "starts": 3
     },
     {
-        "nombre":"nombre13",
+        "nombre":"Mochila sombrero volteado a crochet",
         "url":"./img/WhatsApp Image 2024-07-31 at 9.13.55 AM (1).jpeg",
-         "precio":"$ 80.000"
+         "precio":"$ 80.000",
+         "starts": 3
     },
     {
-        "nombre":"nombre14",
+        "nombre":"Versatil mochila a crochet",
         "url":"./img/WhatsApp Image 2024-07-31 at 9.13.55 AM.jpeg",
-         "precio":"$ 80.000"
+         "precio":"$ 80.000",
+         "starts": 3
     },
     {
-        "nombre":"nombre15",
-        "url":"./img/WhatsApp Image 2024-07-31 at 10.37.19 AM(1).jpeg"
+        "nombre":"aretes",
+        "url":"./img/WhatsApp Image 2024-07-31 at 10.37.19 AM(1).jpeg",
+        "starts": 3,
+        "precio":"$ 14.000"
     },
     {
-         "nombre":"nombre16",
-        "url":"./img/WhatsApp Image 2024-07-31 at 10.37.19 AM(2).jpeg"
+         "nombre":"aretes",
+        "url":"./img/WhatsApp Image 2024-07-31 at 10.37.19 AM(2).jpeg",
+        "precio":"$ 14.000",
+        "starts": 3
     },
     {
         
-        "nombre":"nombre17",
+        "nombre":"Mochila sombrero volteado a crochet",
         "url":"./img/WhatsApp Image 2024-08-01 at 7.07.23 AM.jpeg",
-         "precio":"$ 80.000"
-        
-           
+         "precio":"$ 80.000",
+         "starts": 3        
    }
    
     
