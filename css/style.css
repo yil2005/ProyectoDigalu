@@ -200,7 +200,7 @@ a {
 
 .card {
     position: relative;
-    width: 198px;
+    width: 190px;
     height: 360px;
     border-radius: 10px;    
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -272,6 +272,47 @@ i {
   .rating > input:checked ~ label {
     color: #ffa723;
   }
+
+  #cart {
+    position: fixed;
+    top: 100px;
+    right: 50px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+#cart-items div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+#cart-items p {
+    font-size: 14px;
+    color: black;
+    margin: 0;
+}
+
+#cart-items button {
+    background-color: #f0f0f0;
+    border: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+#cart-items button:hover {
+    background-color: #e58e09;
+    color: white;
+}
+
   
   
   
