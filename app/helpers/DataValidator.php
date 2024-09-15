@@ -36,21 +36,7 @@ class DataValidator {
     
     }
 
-    // Validar imagen (tipo y tamaño)    
-    public static function validateImage($file) {
-        $maxSize = 10 * 1024 * 1024; // 10 MB
-        $allowedTypes = ['image/jpeg', 'image/png'];
-        
-        if ($file['size'] > $maxSize) {
-            return 'El archivo supera el tamaño máximo permitido de 10MB';
-        }
-        
-        if (!in_array($file['type'], $allowedTypes)) {
-            return 'El archivo debe ser de tipo JPEG o PNG';
-        }
-        
-        return true;
-    }
+    
 
 
     // Validar contraseña con los requisitos específicos
@@ -77,16 +63,8 @@ class DataValidator {
         $errors = [];
         if (isset($data['nombre']) && !self::validateString($data['nombre'])) {
             $errors['nombre'] = 'Nombre no válido';
-        }
-        if (isset($data['apellido']) && !self::validateString($data['apellido'])) {
-            $errors['apellido'] = 'Apellido no válido';
-        }
-        if (isset($data['genero']) && !self::validateString($data['genero'])) {
-            $errors['genero'] = 'Género no válido';
-        }        
-        if (isset($data['indentificacion']) && !self::validateNumericString($data['indentificacion'])) {
-            $errors['indentificacion'] = 'Identificación no válida';
-        }
+        }       
+        
 
         if (isset($data['correo']) && !self::validateEmail($data['correo'])) {
             $errors['correo'] = 'Correo no válido';
@@ -97,31 +75,11 @@ class DataValidator {
         }
 
     
-        /* 
-         if (isset($data['imagen'])) {
-            $imageValidationResult = self::validateImage($data['imagen']);
-            if ($imageValidationResult !== true) {
-                $errors['imagen'] = $imageValidationResult;
-            }
-        }       
-        */
-        
 
         return $errors;
     }
 
-    public static function ValidateSms($data){
-        $errors = [];
-        if(isset($data['number']) && !self::validateNumbedigit10($data['number'])){
-            $errors['number'] = 'numero invalido';
-        }
-        if(isset($data['send']) && !self::validateString($data['send'])){
-            $errors['send'] = 'Solo letras';
-
-        }
-        return $errors;
-        
-    }
+   
 
 }
 

@@ -1,8 +1,8 @@
 <?php
 namespace models;
 
-use models\Conexion;
-use models\DataAccessInterface;
+require_once __DIR__ . '/conexion.php'; 
+require_once __DIR__ . '/DataAccessInterface.php';
 
 abstract class DatabaseHandler implements DataAccessInterface {
     protected $conexion;
@@ -19,40 +19,40 @@ abstract class DatabaseHandler implements DataAccessInterface {
 
     protected function prepareAndExecute($query, $types = '', $params = []) {
         // Preparar la consulta
-          
         $stmt = mysqli_prepare($this->conexion, $query);
-        //var_dump($stmt);  
         if ($stmt === false) {           
             return [false, "Error en mysqli_prepare: " . mysqli_error($this->conexion)];
         }
     
         // Si hay tipos y parámetros, vincularlos
-        if (!empty($types) && !empty($params)) {                           
+        if (!empty($types) && !empty($params)) {
+            // Verifica si params es un array de arrays o solo un array
             if (!is_array($params[0])) {
                 $params = [$params]; // Convertir a array de arrays si no lo es
             }
     
-            if (!mysqli_stmt_bind_param($stmt, $types, ...$params[0])) {
-         
-                return [false, "Error en mysqli_stmt_bind_param: " . mysqli_stmt_error($stmt)];
+            // Crear un array de referencias para bind_param
+            $bindParams = array_merge([$types], $params[0]);
+            $refParams = [];
+            
+            foreach ($bindParams as $key => $value) {
+                $refParams[$key] = &$bindParams[$key];
             }
     
-            // Ejecutar la consulta
-            if (!mysqli_stmt_execute($stmt)) {
-              
-                return [false, "Error en mysqli_stmt_execute: " . mysqli_stmt_error($stmt)];
+            // Vincular los parámetros
+            if (!mysqli_stmt_bind_param($stmt, ...$refParams)) {
+                return [false, "Error en mysqli_stmt_bind_param: " . mysqli_stmt_error($stmt)];
             }
-        } else {
-            // Ejecutar la consulta sin parámetros
-            if (!mysqli_stmt_execute($stmt)) {
-               
-                return [false, "Error en mysqli_stmt_execute: " . mysqli_stmt_error($stmt)];
-            }
+        }
+    
+        // Ejecutar la consulta
+        if (!mysqli_stmt_execute($stmt)) {
+            return [false, "Error en mysqli_stmt_execute: " . mysqli_stmt_error($stmt)];
         }
     
         return [true, $stmt];
     }
-
+    
     public function cerrarConexion() {
         Conexion::getInstancia()->cerrarConexion();
     }

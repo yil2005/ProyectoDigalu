@@ -1,12 +1,10 @@
 <?php
 namespace models;
-
+use helpers\Helper;
 require_once 'QueryInnerjoin.php';
 require_once 'DatabaseHandler.php';
 require_once 'QueryBuilder.php';
-
-
-use helpers\Helper;
+require_once __DIR__ . '/../helpers/Helper.php'; 
 
 class DynamicQuery extends DatabaseHandler {
     private $table;
@@ -47,24 +45,31 @@ class DynamicQuery extends DatabaseHandler {
 
     }
   /* ejecuta Read por if */
-    public function obtenerPorId($datos) {
-        list($params,$query ) = QueryBuilder::GetId($this->table, $datos);    
-        list($success, $stmtOrError) = $this->prepareAndExecute($query, 's', $params);    
-        if ($success) {
-            $result = $stmtOrError->get_result();
-            $data = mysqli_fetch_assoc($result);
-            if ($data) {
-                $data =Helper::excludePassword([$data]);
-                $result = ['success' => true, 'data' => $data[0]];
-            } else {
-                $result = ['success' => false, 'message' => 'Este registro no existe'];
-            }
+  public function obtenerPorId($datos) {
+    list($params, $query) = QueryBuilder::GetId($this->table, $datos);
+
+    // Construir la cadena de tipos basada en el número de parámetros
+    $types = str_repeat('s', count($params)); // Suponiendo que todos los parámetros son strings
+
+    list($success, $stmtOrError) = $this->prepareAndExecute($query, $types, $params);
+
+    if ($success) {
+        $result = $stmtOrError->get_result();
+        $data = mysqli_fetch_assoc($result);
+        if ($data) {
+            $data = Helper::excludePassword([$data]);
+            $result = ['success' => true, 'data' => $data[0]];
         } else {
-            $result = ['success' => false, 'message' => 'Error en la consulta: ' . $stmtOrError];
+            $result = ['success' => false, 'message' => 'Este registro no existe'];
         }
-        $this->cerrarConexion();
-        return $result;
+    } else {
+        $result = ['success' => false, 'message' => 'Error en la consulta: ' . $stmtOrError];
     }
+    $this->cerrarConexion();
+    return $result;
+}
+
+
     
   /* crea un nueva registro siempre cuando este un dato pws(password)*/
     public function created($datos) {
@@ -105,9 +110,7 @@ class DynamicQuery extends DatabaseHandler {
             return ['success' => false, 'message' => 'Error al eliminar: ' . $stmtOrError];
         }
         $this->cerrarConexion();
-    }
-
-    
+    }   
 
     
 /* ejecuta la conusltar insert */

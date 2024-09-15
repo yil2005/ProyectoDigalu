@@ -13,13 +13,27 @@ class QueryBuilder {
         return $sql;
     }
 
-    public static function GetId($table,$datos){
-        $column = implode(", ", array_keys($datos));
-        $params = array_values($datos);
-        $query = "SELECT * FROM {$table} WHERE {$column} = ?";
+    public static function GetId($table, $datos) {
+        // Define las columnas específicas que deseas seleccionar
+        $selectColumns = 'id_usuario, correo'; // Puedes ajustar esto según tus necesidades
+        
+        // Crea una lista de condiciones con marcadores de posición para cada columna
+        $conditions = [];
+        foreach (array_keys($datos) as $key) {
+            $conditions[] = "{$key} = ?";
+        }
+        $whereClause = implode(" AND ", $conditions);
+        
+        // Construye la consulta SQL
+        $query = "SELECT {$selectColumns} FROM {$table} WHERE {$whereClause}";        
+        // Obtén los valores de los datos
+        $params = array_values($datos);    
+        
+        // Retorna los parámetros y la consulta
         return [$params, $query];
     }
 
+  
     public static function QueryGetAll($table){
         $sql = "SELECT * FROM {$table}";
         return $sql;
