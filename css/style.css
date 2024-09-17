@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+header {
+    position: relative;
+    background: url('../img/kelly-sikkema-M6lApC0hEpg-unsplash.jpg');   
+    background-repeat: no-repeat;   
+    background-position: 12% 31%;
+    background-size: cover;
+    background-size: 85em 52em;
+    height: 88vh;
+    color: white; 
+    margin-bottom: 60px;  
+}
+
+.BtnMenu {
+    border: none;
+    background: white;
+    position: absolute;
+    top: 3em;
+    left: 85em;
+    width: 103px;
+    height: 36px;
+    font-weight: 700;
+    font-style: normal;  
+    color: black; 
+    border-radius: 10px;     
+}
+
+.BtnMenu:hover {
+    cursor: pointer;
+    background: #f0f0f0;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    left: 71em;
+    top: 80px;
+    width: 94px;
+    border-radius: 7px;
+    
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    
+    margin-bottom: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu a:hover {
+    color: #23527c;
+}
+
+.optionsHeader {
+    position: absolute;    
+    top: 4em;
+    left: 58px;
+    border: 1px solid #fafafa10;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.glass-efect {
+    background: #fafafa10;
+    backdrop-filter: blur(0.4rem);
+    -webkit-backdrop-filter: blur(0.4rem);
+}
+
+.layout {
+    width: 100%;
+    display: flex;
+    gap: 16px;    
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: white;
+    font-size: 16px;    
+    text-decoration: none;
+}
+
+.header-content {
+    max-width: 800px;   
+    position: relative;
+}
+
+.header-content > h1 {
+    position: absolute;
+    text-align: center;
+    top: 6em;
+    left: 52px;
+}
+.user-info{
+    position: absolute;
+    left: 61em;
+    top: 2em;
+    width: 100px;
+    border: 1px solid white;
+}
+.user-icon{
+    font-size: 50px; 
+}
+.headerInfo {
+    position: absolute;
+    left: 50%;
+    top: 10em;
+}
+
+.TextHeader {
+    font-size: 16px;
+    font-style: normal;
+}
+
+.card-promocion {
+    position: absolute;
+    width: 11em;
+    padding: 9px;
+    top: 17em;
+    left: 50px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 41px;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    text-align: left;
+    display: block; 
+    margin: 5px 0px 0px 9px;
+    color: black;
+    font-size: 14px;
+}
+
+.imgpromotion {
+    display: block;
+    width: 154px;
+    height: 173px;
+    border-radius: 5px;  
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.boton-circulo {     
+    background-color: white; /* Color de fondo */
+    color: black; /* Color del texto */
+    border: none; /* Elimina el borde predeterminado */    
+    font-size: 16px; /* Tamaño del texto */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Convierte el botón en un círculo */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: all 0.2s ease; /* Transición suave para los efectos hover y active */
+    align-self: flex-end; 
+}
+
+.boton-circulo:hover {
+    background-color: #ECF0F1; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.boton-circulo:active {
+    box-shadow: 0 0 2px rgb(22, 26, 26); /* Agrega una sombra al presionar el botón */
+    transform: translateY(2px); /* Mueve ligeramente el botón hacia abajo al presionarlo */
+}
+
+.gallerycontainer {
+    width: 80em;
+    display: flex;
+    gap: 4em;
+    flex-wrap: wrap;   
+    margin: 0 auto;
+    padding: 15px;  
+}
+
+.card {
+    position: relative;
+    width: 190px;
+    height: 360px;
+    border-radius: 10px;    
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+p {
+    display: inline;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    font-size: 14px;
+}
+
+.info{
+position: absolute;
+left: 23%;
+top: 72%;
+display: flex;
+flex-direction: column;
+width: 8em;
+}
+
+i {
+    font-size: 30px;
+}
+
+.imgshopping {
+    width: 190px;
+    height: 254px;
+    border-radius: 10px 10px 0px 0px;
+}
+.rating{
+  margin-top: 33px; 
+  height: 24px;
+}
+.rating:not(:checked) > input {
+    position: absolute;
+    appearance: none;    
+  }
+  
+  .rating:not(:checked) > label {
+    float: right;
+    cursor: pointer;
+    font-size: 24px;
+    color: #666;
+  }
+  
+  .rating:not(:checked) > label:before {
+    content: '★';
+  }
+  
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+    color: #e58e09;
+  }
+  
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+    color: #ff9e0b;
+  }
+  
+  .rating > input:checked ~ label {
+    color: #ffa723;
+  }
+
+  #cart {
+    position: fixed;
+    top: 100px;
+    right: 50px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+#cart-items div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+#cart-items p {
+    font-size: 14px;
+    color: black;
+    margin: 0;
+}
+
+#cart-items button {
+    background-color: #f0f0f0;
+    border: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+#cart-items button:hover {
+    background-color: #e58e09;
+    color: white;
+}
+
+  
+  
+  
+  

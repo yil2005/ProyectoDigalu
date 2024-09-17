@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>Store</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">            
+            <div class="optionsHeader glass-efect">
+                <ul class="layout">
+                    <li><a href="">Tienda</a></li>
+                    <li><a href="">Acerca de</a></li>
+                    <li><a href="">Cooperación</a></li>
+                    <li><a href="">Contacto</a></li>
+                </ul>
+            </div>
+
+            <button class="BtnMenu" id="menu-button">Menu</button>
+            <div id="menu" class="menu animate__animated">
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="#">Option 2</a></li>
+                    <li><a href="#">Option 3</a></li>
+                </ul>
+            </div>
+
+            <div id="user-info" class="user-info">
+                <i class='bx bx-user-circle user-icon'></i>
+                <p>Email: <span id="user-email"></span></p>
+                <p><span id="user-id"></span></p>
+            </div>
+
+            <h1>Discover the perfect blend of style</h1>            
+        </div>
+        <div class="headerInfo">
+            <p class="TextHeader">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque sit commodi officia impedit ipsam.</p>
+        </div>
+        
+        <div class="card-promocion">          
+            <img class="imgpromotion" src="./img/WhatsApp Image 2024-07-31 at 9.13.50 AM.jpeg" alt="200">
+            <div class="text-container">
+                <div class="text-content">
+                    <p class="text">Mochila</p>
+                    <p class="text">$50.000</p>
+                </div>
+                <button class="boton-circulo">
+                    <i class='bx bx-right-top-arrow-circle'></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section id="products">       
+    </section>
+
+    <!-- Carrito de compras -->
+    <div id="cart">
+        <h2>Carrito de compras</h2>
+        <div id="cart-items"></div>
+    </div>
+
+    <script src="./js/components/Gallery.js"></script>
+    <script src="./js/components/botonMenu.js"></script>
+    <script src="./js/components/index.js"></script>
+</body>
+</html>
