@@ -76,18 +76,29 @@ class UserController {
         exit; 
     }
 
-    public static function login(){
-        self::init();            
+    
+
+    public static function login() {
+        self::init();
         header('Content-Type: application/json');
+
         $input = file_get_contents("php://input");
         $data = json_decode($input, true);
     
-        $validation = false;
-        $message = '';
-        $responseData = []; 
-        print_r($data);
-    
 
+        if (!isset($data['correo']) || !isset($data['pws'])) {
+            echo json_encode(['success' => false, 'message' => 'Correo y contraseña son requeridos'], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+            exit;
+        }
+
+        $result = self::$Query->login($data);
+
+        if ($result['success']) {
+            echo json_encode($result, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);         
+        } else {
+            echo("Error");            
+        }
+        exit;
     }
 
     

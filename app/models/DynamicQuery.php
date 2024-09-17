@@ -73,10 +73,7 @@ class DynamicQuery extends DatabaseHandler {
     
   /* crea un nueva registro siempre cuando este un dato pws(password)*/
     public function created($datos) {
-        // Encriptar la contraseña antes de guardar
-        if (isset($datos['pws'])) {
-            $datos['pws'] = Helper::EncriptarPws($datos['pws']);
-        }
+        
         return $this->insert($datos);
     }
 
@@ -133,6 +130,31 @@ class DynamicQuery extends DatabaseHandler {
         return ['success' => false, 'message' => 'Error al insertar: ' . $e->getMessage()];
             
         }
+        $this->cerrarConexion();
+    }
+
+      /* realiza los consulta al login a la base de datos */
+      public function login($data) { 
+       
+        list($sql, $params) = QueryBuilder::GetLogin($this->table, $data);           
+        list($success, $stmtOrError) = $this->prepareAndExecute($sql, 's', [$params[0]]);
+        
+        if ($success) {
+            // Obtener el resultado de la consulta
+            $result = $stmtOrError->get_result();
+            $user = mysqli_fetch_assoc($result);
+            print_r($user);
+            echo $data['pws'];
+            
+            if($data['pws'] == $user['pws']){
+                return ['success' => true, "data" => $user];
+
+            }
+        }
+            
+           
+    
+        // Cerrar la conexión
         $this->cerrarConexion();
     }
 
