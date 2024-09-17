@@ -1,4 +1,4 @@
-import { UrlUserInsert } from '../consts.js';
+import { UrlUserInsert, UrlUserLogin } from '../consts.js';
 
 // Función para registrar al usuario
 export async function UserInsert(datos) {
@@ -14,5 +14,21 @@ export async function UserInsert(datos) {
     console.log(error);
   }
 }
+
+
+// Función para registrar al usuario
+export async function UserLogin(datos) {
+    try {
+      const response = await fetch(UrlUserLogin, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(datos)
+      });
+      const data = await response.text();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
 

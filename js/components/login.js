@@ -1,5 +1,5 @@
 // Importa la función que realiza la inserción
-import { UserInsert} from '../utils/api/request.js';
+import { UserInsert, UserLogin} from '../utils/api/request.js';
 
 const wrapper = document.querySelector(".wrapper"),
   signupHeader = document.querySelector(".signup header"),
@@ -24,14 +24,7 @@ export async function LoginAuth(event) {
     const result = await UserLogin(data);
     console.log(result);
     
-    // Guardar los datos de usuario en localStorage
-    if (result.success) {
-      localStorage.setItem('userData', JSON.stringify(result.data));
-      window.location.href = "index.html";
-    } else {
-      console.log("Error en el login:", result.message);
-    }
-  } catch (error) {
+} catch (error) {
     console.log(error);
   }
 }

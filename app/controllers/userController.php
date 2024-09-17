@@ -75,6 +75,22 @@ class UserController {
         echo json_encode($responseData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         exit; 
     }
+
+    public static function login(){
+        self::init();            
+        header('Content-Type: application/json');
+        $input = file_get_contents("php://input");
+        $data = json_decode($input, true);
+    
+        $validation = false;
+        $message = '';
+        $responseData = []; 
+        print_r($data);
+    
+
+    }
+
+    
     
 
 
