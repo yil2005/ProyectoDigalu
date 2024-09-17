@@ -23,6 +23,18 @@ export async function LoginAuth(event) {
   try {
     const result = await UserLogin(data);
     console.log(result);
+    if (result.success) {
+      console.log("Datos recibidos:", result.data);
+
+      // Guardar los datos recibidos en localStorage
+      localStorage.setItem('userData', JSON.stringify(result.data));
+
+      // Redirigir a index.html
+      window.location.href = "index.html";
+    } else {
+      console.log("Error:", result.message);
+    }
+
     
 } catch (error) {
     console.log(error);

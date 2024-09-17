@@ -1,7 +1,43 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Obtener los datos del usuario del localStorage
+    const userData = JSON.parse(localStorage.getItem('userData'));
+
+    // Verificar si hay datos y mostrarlos en la página
+    if (userData) {
+        console.log('Datos del usuario:', userData);
+
+        // Mostrar los datos del usuario en el HTML
+        document.getElementById('user-email').textContent = userData.correo;
+        document.getElementById('user-id').textContent = `ID de usuario: ${userData.id_usuario}`;
+
+        // Mostrar el div con la información del usuario
+        document.getElementById('user-info').style.display = 'block';
+    } else {
+        console.log('No hay datos de usuario almacenados.');
+
+        // Ocultar el div si no hay datos de usuario
+        document.getElementById('user-info').style.display = 'none';
+    }
+
+    // Llamada a la función para cargar la galería
+    GalleryCard();
+});
+
+
 let cart = []; // Array para almacenar los productos seleccionados
 
 async function GalleryCard() {
     try {
+        // Obtener los datos del usuario del localStorage
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        const id_usuario = userData ? userData.id_usuario : null;
+
+        // Si no hay id_usuario, no continúa
+        if (!id_usuario) {
+            console.log('No hay usuario logueado.');
+            return;
+        }
+
         const response = await fetch('./data/dataimg.json');
         const data = await response.json();
         let selectionproducts = document.getElementById('products');
@@ -50,7 +86,7 @@ async function GalleryCard() {
 
             // Añadir funcionalidad para agregar productos al carrito
             card.addEventListener('click', () => {
-                addToCart({ nombre, precio, url });
+                addToCart({ nombre, precio, url, carrito_user: id_usuario }); // Añadir el id_usuario al producto
             });
 
             // Añadir elementos a la tarjeta
@@ -85,7 +121,7 @@ function displayCart() {
 
     cart.forEach((product, index) => {
         let productElement = document.createElement('div');
-        productElement.innerHTML = `<p>${product.nombre} - ${product.precio}</p>`;
+        productElement.innerHTML = `<p>${product.nombre} - ${product.precio} - Usuario: ${product.carrito_user}</p>`;
         
         // Botón para eliminar un producto del carrito
         let removeButton = document.createElement('button');

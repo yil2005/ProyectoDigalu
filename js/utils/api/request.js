@@ -24,8 +24,8 @@ export async function UserLogin(datos) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(datos)
       });
-      const data = await response.text();
-      console.log(data);
+      const data = await response.json();
+      return data;
     } catch (error) {
       console.log(error);
     }

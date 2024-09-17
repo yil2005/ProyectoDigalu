@@ -142,12 +142,10 @@ class DynamicQuery extends DatabaseHandler {
         if ($success) {
             // Obtener el resultado de la consulta
             $result = $stmtOrError->get_result();
-            $user = mysqli_fetch_assoc($result);
-            print_r($user);
-            echo $data['pws'];
-            
+            $user = mysqli_fetch_assoc($result);            
+
             if($data['pws'] == $user['pws']){
-                return ['success' => true, "data" => $user];
+                return ['success'=> true, "data" => $user];
 
             }
         }
